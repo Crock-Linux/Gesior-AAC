@@ -186,7 +186,7 @@ public static $fields = array('id', 'name', 'password', 'premdays', 'coins', 'la
 	}
 	public function getPassword(){return $this->data['password'];}
 	public function setPremDays($value){$this->data['premdays'] = $value;}
-	public function getPremDays(){return $this->data['premdays'] - (date("z", time()) + (365 * (date("Y", time()) - date("Y", $this->data['lastday']))) - date("z", $this->data['lastday']));}
+	public function getPremDays(){return $this->data['premdays'];}
 	public function setLastDay($value){$this->data['lastday'] = $value;}
 	public function getLastDay(){return $this->data['lastday'];}
 	public function setMail($value){$this->data['email'] = $value;}
