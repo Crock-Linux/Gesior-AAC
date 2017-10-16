@@ -32,7 +32,7 @@ $news_content .= '
 									<div id="TickerEntry-'.$number_of_tickers.'-Button" class="NewsTickerExtend" style="background-image:url('.$layout_name.'/images/global/general/plus.gif)"></div>
 									<div class="NewsTickerText">
 										<span class="NewsTickerDate">'.date("M j Y", $ticker['date']).' - </span>
-										<div id="TickerEntry-'.$number_of_tickers.'-ShortText" class="NewsTickerShortText">'.short_text($ticker['text'], 60).'</div>
+										<div id="TickerEntry-'.$number_of_tickers.'-ShortText" class="NewsTickerShortText">'.short_text($ticker['text'], 100).'</div>
 										<div id="TickerEntry-'.$number_of_tickers.'-FullText" class="NewsTickerFullText">'.$ticker['text'].'</div>
 									</div>
 								</div>
