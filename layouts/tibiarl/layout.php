@@ -93,9 +93,7 @@ if(!defined('INITIALIZED'))
               				<a href="/?subtopic=latestnews">
 								<img id="TibiaLogoArtworkTop" src="<?php echo $layout_name; ?>/images/global/header/tibia-logo-artwork-top.gif" alt="logoartwork">
 							</a>
-              				<!--
-							<img id="LogoLink" src="<?php echo $layout_name; ?>/images/global/general/blank.gif" onclick="window.location = &#39;http://cipsoft.com&#39;;" alt="logoartwork">
-							-->
+							<img id="LogoLink" src="<?php echo $layout_name; ?>/images/global/general/blank.gif" onclick="window.location = &#39;http://malveraglobal.com.br&#39;;" alt="logoartwork">
             			</div>
             
   						<div id="Loginbox">
