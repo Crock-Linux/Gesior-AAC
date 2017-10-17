@@ -374,7 +374,7 @@ if(!defined('INITIALIZED'))
 																								<input type="radio" id="ServiceID_'.$product['id'].'" class="ServiceID" name="ServiceID" value="'.$product['id'].'" />
 																								'.$product['offer_name'].' </div>
 																						</div>
-																						<div class="ServiceIDPriceContainer" ><span class="ServiceIDPrice" id="PD_'.$product['id'].'" >price on application</span> *</div>
+																						<div class="ServiceIDPriceContainer" ><span class="ServiceIDPrice" id="PD_'.$product['id'].'" >'.$product['points'].' Coins</span> *</div>
 																					</label>
 																				</div>
 																			</div>
