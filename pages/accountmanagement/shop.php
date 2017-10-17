@@ -1,5 +1,4 @@
-<?php
-if(!defined('INITIALIZED'))
+<?php if(!defined('INITIALIZED'))
 	exit;
 		$main_content .= '
 			<script type="text/javascript" >
@@ -37,7 +36,7 @@ if(!defined('INITIALIZED'))
 		foreach($get_Services as $g_Ser) {
 			$g_Services .= $g_Ser['id'].','; #repeat items
 		}
-		$g_Services = substr($g_Services,0,-1); #cut 
+		$g_Services = substr($g_Services,0,-1); #cut
 		$g_Services .= ']';
 		
 		$g_Prices = '{';
@@ -124,7 +123,6 @@ if(!defined('INITIALIZED'))
 				}
 				
 				// mouse over effect for payment methods
-
 				function MouseOverPMCID(a_PMCID) {
 					$(\'#PMCID_Icon_Over_\' + a_PMCID).css(\'background-image\', \'url(\' + JS_DIR_IMAGES + \'payment/pmcid_icon_over.png)\');
 				}
@@ -135,7 +133,6 @@ if(!defined('INITIALIZED'))
 				}
 				
 				// mouse over effect for products
-
 				function MouseOverServiceID(a_ServiceID, a_ServiceCategoryID) {
 					$(\'#ServiceID_Icon_Over_\' + a_ServiceID).css(\'background-image\', \'url(\' + JS_DIR_IMAGES + \'payment/serviceid_icon_over.png)\');
 					if (a_ServiceCategoryID == g_QF_Mounts_ServiceCategoryID || a_ServiceCategoryID == g_QF_Outfits_ServiceCategoryID) {
@@ -144,11 +141,11 @@ if(!defined('INITIALIZED'))
 					}
 				}
 				// mouse out effect for products
-
 				function MouseOutServiceID(a_ServiceID, a_ServiceCategoryID) {
 					$(\'#ServiceID_Icon_Over_\' + a_ServiceID).css(\'background-image\', \'\');
 					// mounts have an animation
-					if ((a_ServiceCategoryID == g_QF_Mounts_ServiceCategoryID || a_ServiceCategoryID == g_QF_Outfits_ServiceCategoryID) && ($(\'#ServiceID_\' + a_ServiceID).attr(\'checked\') != \'checked\')) {
+					if ((a_ServiceCategoryID == g_QF_Mounts_ServiceCategoryID || a_ServiceCategoryID == g_QF_Outfits_ServiceCategoryID) && ($(\'#ServiceID_\' + 
+a_ServiceID).attr(\'checked\') != \'checked\')) {
 						$(\'#ServiceID_Icon_Animation_1_\' + a_ServiceID).hide();
 						$(\'#ServiceID_Icon_New_\' + a_ServiceID).show();
 					}
@@ -165,12 +162,12 @@ if(!defined('INITIALIZED'))
 					</div>
 					<img id="BackgroundContainerRightEnd" src="'.$layout_name.'/images/global/content/stonebar-right-end.gif" />
 				</div>
-				<img id="TubeLeftEnd" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-left-green.gif" /> 
+				<img id="TubeLeftEnd" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-left-green.gif" />
 				<img id="TubeRightEnd" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-right-'.(($step == 4) ? 'green' : 'blue').'.gif" />
 				
 				<div id="FirstStep" class="Steps" >
 				
-					<div class="SingleStepContainer" > 
+					<div class="SingleStepContainer" >
 						<img class="StepIcon" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-icon-1-green.gif" />
 						<div class="StepText" style="font-weight:'.((!isset($step) || $step == 1) ? 'bold' : 'normal').';" >Select service</div>
 					</div>
@@ -181,11 +178,13 @@ if(!defined('INITIALIZED'))
 					<div id="StepsContainer2" >
 					
 						<div class="Steps" style="width:33%" >
-							<div class="TubeContainer" > 
-								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-'.((!isset($step) || $step == 1) ? 'green-blue' : 'green').'.gif" /> 
+							<div class="TubeContainer" >
+								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-'.((!isset($step) || $step == 1) ? 
+'green-blue' : 'green').'.gif" />
 							</div>
-							<div class="SingleStepContainer" > 
-								<img class="StepIcon" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-icon-2-'.(($step >= 2) ? 'green' : 'blue').'.gif" />
+							<div class="SingleStepContainer" >
+								<img class="StepIcon" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-icon-2-'.(($step >= 2) ? 'green' : 
+'blue').'.gif" />
 								<div class="StepText" style="font-weight:'.(($step == 2) ? 'bold' : 'normal').';" >Enter payment data</div>
 							</div>
 						</div>
@@ -193,19 +192,20 @@ if(!defined('INITIALIZED'))
 						<div class="Steps" style="width:33%" >
 							<div class="TubeContainer" >';
 							if ($step == 2) {
-								$main_content .= ' 
+								$main_content .= '
 								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-green-blue.gif" />';
 							}elseif ($step >= 3) {
-								$main_content .= ' 
+								$main_content .= '
 								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-green.gif" />';
 							}else{
-								$main_content .= ' 
+								$main_content .= '
 								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-blue.gif" />';
 							}
 						$main_content .= '
 							</div>
-							<div class="SingleStepContainer" > 
-								<img class="StepIcon" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-icon-3-'.(($step >= 3) ? 'green' : 'blue').'.gif" />
+							<div class="SingleStepContainer" >
+								<img class="StepIcon" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-icon-3-'.(($step >= 3) ? 'green' : 
+'blue').'.gif" />
 								<div class="StepText" style="font-weight:'.(($step == 3) ? 'bold' : 'normal').';" >Confirm your order</div>
 							</div>
 						</div>
@@ -213,19 +213,20 @@ if(!defined('INITIALIZED'))
 						<div class="Steps" style="width:33%" >
 							<div class="TubeContainer" > ';
 								if ($step == 3) {
-								$main_content .= ' 
+								$main_content .= '
 								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-green-blue.gif" />';
 							}elseif ($step >= 4) {
-								$main_content .= ' 
+								$main_content .= '
 								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-green.gif" />';
 							}else{
-								$main_content .= ' 
+								$main_content .= '
 								<img class="Tube" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-tube-blue.gif" />';
 							}
-						$main_content .= ' 
+						$main_content .= '
 							</div>
-							<div class="SingleStepContainer" > 
-								<img class="StepIcon" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-icon-4-'.(($step == 4) ? 'green' : 'blue').'.gif" />
+							<div class="SingleStepContainer" >
+								<img class="StepIcon" src="'.$layout_name.'/images/global/content/progressbar/progress-bar-icon-4-'.(($step == 4) ? 'green' : 
+'blue').'.gif" />
 								<div class="StepText" style="font-weight:'.(($step == 4) ? 'bold' : 'normal').';" >Summary</div>
 							</div>
 						</div>
@@ -256,16 +257,21 @@ if(!defined('INITIALIZED'))
 				'.(($doubleStatus['value'] == "active") ? '<div class="ribbonShop-double"></div>' : '').'
 					<table class="Table5" cellpadding="0" cellspacing="0">
 					<div class="CaptionContainer" >
-						<div class="CaptionInnerContainer" > 
-							<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-							<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-							<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-							<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+						<div class="CaptionInnerContainer" >
+							<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+							<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+							<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" 
+></span>
+							<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" 
+/></span>
 							<div class="Text" >'.$service.'</div>
-							<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span> 
-							<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-							<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-							<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
+							<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" 
+/></span>
+							<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" 
+></span>
+							<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+							<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" 
+/></span>
 						</div>
 					</div>
 					<tr>
@@ -280,16 +286,24 @@ if(!defined('INITIALIZED'))
 									
 									foreach($getCat as $category) {
 										$main_content .= '
-											<span class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \''.$category['name'].'\', \''.$category['desc'].'\', \'ProductCategoryHelperDiv_'.$category['id'].'\');" onMouseOut="$(\'#HelperDivContainer\').hide();" >
-												<div class="InnerTableTab '.(($serviceCategoryId == $category['id']) ? 'ActiveInnerTableTab' : '').'">
-													<div id="ProductCategoryHelperDiv_'.$category['id'].'" class="ProductCategoryHelperDiv" ></div>
-													<a href="?subtopic=accountmanagement&action=services&ServiceCategoryID='.$category['id'].'&step='.$step.'">
-														<img src="'.$layout_name.'/images/payment/products_tab_'.(($serviceCategoryId == $category['id']) ? '' : 'non').'active.png" />
+											<span class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \''.$category['name'].'\', 
+\''.$category['desc'].'\', \'ProductCategoryHelperDiv_'.$category['id'].'\');" onMouseOut="$(\'#HelperDivContainer\').hide();" >
+												<div class="InnerTableTab '.(($serviceCategoryId == $category['id']) ? 'ActiveInnerTableTab' : 
+'').'">
+													<div id="ProductCategoryHelperDiv_'.$category['id'].'" 
+class="ProductCategoryHelperDiv" ></div>
+													<a 
+href="?subtopic=accountmanagement&action=services&ServiceCategoryID='.$category['id'].'&step='.$step.'">
+														<img src="'.$layout_name.'/images/payment/products_tab_'.(($serviceCategoryId 
+== $category['id']) ? '' : 'non').'active.png" />
 														<div class="InnerTableTabLabel" >'.$category['name'].'</div>';
 														$newCategory = $category['id'];
-														$getNews = $SQL->query("SELECT `offer_date` FROM `z_shop_offer` WHERE `category` = '$newCategory' ORDER BY `offer_date` DESC LIMIT 1")->fetch();
-														if ((time() - ($config['shop']['newitemdays'] * 86400)) < $getNews['offer_date'])
-															$main_content .= '<div class="RibbonNewProduct" style="background-image: url('.$layout_name.'/images/payment/ribbon-tab-new-product'.(($serviceCategoryId == $category['id']) ? '_active' : '').'.png);" ></div>';
+														$getNews = $SQL->query("SELECT `offer_date` FROM `z_shop_offer` WHERE 
+`category` = '$newCategory' ORDER BY `offer_date` DESC LIMIT 1")->fetch();
+														if ((time() - ($config['shop']['newitemdays'] * 86400)) < 
+$getNews['offer_date'])
+															$main_content .= '<div class="RibbonNewProduct" 
+style="background-image: url('.$layout_name.'/images/payment/ribbon-tab-new-product'.(($serviceCategoryId == $category['id']) ? '_active' : '').'.png);" ></div>';
 									
 												$main_content .= '
 													</a>
@@ -297,7 +311,7 @@ if(!defined('INITIALIZED'))
 											</span>';
 									}
 										
-									$main_content .= '	
+									$main_content .= '
 										</td>
 									</tr>';
 									#services
@@ -306,75 +320,117 @@ if(!defined('INITIALIZED'))
 									<tr>
 										<td>
 											<div class="TableShadowContainerRightTop" >
-												<div class="TableShadowRightTop" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
+												<div class="TableShadowRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
 											</div>
-											<div class="TableContentAndRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
+											<div class="TableContentAndRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
 												<div class="TableContentContainer" >
-													<table class="TableContent" width="100%"  style="border:1px solid #faf0d7;" >
+													<table class="TableContent" width="100%" style="border:1px solid #faf0d7;" >
 														<tr>
 															<td style="text-align: center;" align="center" >
-																<div style="max-height: 500px; min-height: 100px; overflow-y: auto;">';
+																<div style="max-height: 500px; min-height: 100px; overflow-y: 
+auto;">';
 															
-															$getProducts = $SQL->query("SELECT * FROM `z_shop_offer` WHERE `category` = '$serviceCategoryId' AND `hide` = 0 ORDER BY `offer_date` DESC")->fetchAll();
+															$getProducts = $SQL->query("SELECT * FROM `z_shop_offer` WHERE 
+`category` = '$serviceCategoryId' AND `hide` = 0 ORDER BY `offer_date` DESC")->fetchAll();
 															
 															if (count($getProducts) >= 1)
 																foreach($getProducts as $product) {
 																
 																	$main_content .= '
-																		<div class="ServiceID_Icon_Container" id="ServiceID_Icon_Container_'.$product['id'].'">
-																			<div class="ServiceID_Icon_Container_Background" id="" style="background-image:url('.$layout_name.'/images/payment/serviceid_icon_normal.png);" >
-																				<div class="ServiceID_Icon" id="ServiceID_Icon_'.$product['id'].'" '.(($product['category'] == 2) ? 'style="background-image:url('.$layout_name.'/images/payment/'.$product['default_image'].');"' : '').' onclick="ChangeService('.$product['id'].', '.$product['category'].');" onmouseover="MouseOverServiceID('.$product['id'].', '.$product['category'].');" onmouseout="MouseOutServiceID('.$product['id'].', '.$product['category'].');" >
-																					<div class="PermanentDeactivated" >';
+																		<div class="ServiceID_Icon_Container" 
+id="ServiceID_Icon_Container_'.$product['id'].'">
+																			<div 
+class="ServiceID_Icon_Container_Background" id="" style="background-image:url('.$layout_name.'/images/payment/serviceid_icon_normal.png);" >
+																				<div class="ServiceID_Icon" 
+id="ServiceID_Icon_'.$product['id'].'" '.(($product['category'] == 2) ? 'style="background-image:url('.$layout_name.'/images/payment/'.$product['default_image'].');"' : '').' 
+onclick="ChangeService('.$product['id'].', '.$product['category'].');" onmouseover="MouseOverServiceID('.$product['id'].', '.$product['category'].');" 
+onmouseout="MouseOutServiceID('.$product['id'].', '.$product['category'].');" >
+																					<div 
+class="PermanentDeactivated" >';
 																				if(!empty($product['offer_description']))
 																					$main_content .= '
-																						<span class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \''.$product['offer_name'].'\', \''.$product['offer_description'].'\', \'\');" onMouseOut="$(\'#HelperDivContainer\').hide();" >';
-																						$main_content .= '
-																							<div class="ServiceID_HelperDiv" ></div>
+																						<span 
+class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \''.$product['offer_name'].'\', \''.$product['offer_description'].'\', \'\');" 
+onMouseOut="$(\'#HelperDivContainer\').hide();" >';
+																						$main_content 
+.= '
+																							<div 
+class="ServiceID_HelperDiv" ></div>
 																						</span>
 																					</div>
-																					<div class="PermanentDeactivated ServiceID_Deactivated_ByChoice" id="ServiceID_NotAllowed_'.$product['id'].'" style="display: none;" >
-																						<span class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'Service Info:\', \'&lt;p&gt;The product is not available for the selected payment method!&lt;/p&gt;\', \'\');" onMouseOut="$(\'#HelperDivContainer\').hide();" >
-																							<div class="ServiceID_Deactivated" style="background-image: url('.$layout_name.'/images/payment/serviceid_deactivated.png);" ></div>
+																					<div 
+class="PermanentDeactivated ServiceID_Deactivated_ByChoice" id="ServiceID_NotAllowed_'.$product['id'].'" style="display: none;" >
+																						<span 
+class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'Service Info:\', \'&lt;p&gt;The product is not available for the selected payment method!&lt;/p&gt;\', \'\');" 
+onMouseOut="$(\'#HelperDivContainer\').hide();" >
+																							<div 
+class="ServiceID_Deactivated" style="background-image: url('.$layout_name.'/images/payment/serviceid_deactivated.png);" ></div>
 																						</span>
 																					</div>';
-																			if ((time() - ($config['shop']['newitemdays'] * 86400)) < $product['offer_date'])
+																			if ((time() - 
+($config['shop']['newitemdays'] * 86400)) < $product['offer_date'])
 																				$main_content .= '
-																					<div class="RibbonNewProduct" style="background-image: url('.$layout_name.'/images/payment/ribbon-new-product.png);"></div>
-																					<div class="PermanentDeactivated" >
-																						<span class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'New Product!\', \'We have a new product for you in store - the &lt;b&gt;'.$product['offer_name'].'&lt;/b&gt;.\', \'\');" onMouseOut="$(\'#HelperDivContainer\').hide();" >
-																							<div class="ServiceID_HelperDiv" style="z-index: 999;" ></div>
+																					<div 
+class="RibbonNewProduct" style="background-image: url('.$layout_name.'/images/payment/ribbon-new-product.png);"></div>
+																					<div 
+class="PermanentDeactivated" >
+																						<span 
+class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'New Product!\', \'We have a new product for you in store - the &lt;b&gt;'.$product['offer_name'].'&lt;/b&gt;.\', \'\');" 
+onMouseOut="$(\'#HelperDivContainer\').hide();" >
+																							<div 
+class="ServiceID_HelperDiv" style="z-index: 999;" ></div>
 																						</span>
 																					</div>';
 																			if ($product['category'] == 3) {
 																				$main_content .= '
-																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/outfits/'.strtolower(str_replace(" ","_",$product['addon_name'])).'_male.gif); background-repeat:no-repeat; margin:5px 0;" ></div>
-																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/outfits/'.strtolower(str_replace(" ","_",$product['addon_name'])).'_female.gif); background-repeat:no-repeat; margin:5px 60px;" ></div>';
+																					<div 
+class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/outfits/'.strtolower(str_replace(" 
+","_",$product['addon_name'])).'_male.gif); background-repeat:no-repeat; margin:5px 0;" ></div>
+																					<div 
+class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/outfits/'.strtolower(str_replace(" 
+","_",$product['addon_name'])).'_female.gif); background-repeat:no-repeat; margin:5px 60px;" ></div>';
 																			}
 																			if ($product['category'] == 4)
 																				$main_content .= '
-																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/items/'.$product['itemid'].'.gif); background-repeat:no-repeat; margin:20px 45px;" ></div>';
+																					<div 
+class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/items/'.$product['itemid'].'.gif); background-repeat:no-repeat; 
+margin:20px 45px;" ></div>';
 																			if ($product['category'] == 2) {
 																				$main_content .= '
-																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/mounts/'.str_replace(" ","_",$product['offer_name']).'.gif); background-repeat:no-repeat; margin:-5px 22px;" ></div>';
+																					<div 
+class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/mounts/'.str_replace(" ","_",$product['offer_name']).'.gif); 
+background-repeat:no-repeat; margin:-5px 22px;" ></div>';
 																			}
 																			if ($product['category'] == 5) {
 																				$main_content .= '
-																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/points.gif); background-repeat:no-repeat; margin:20px 45px;" ></div>';
+																					<div 
+class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/points.gif); background-repeat:no-repeat; margin:20px 45px;" 
+></div>';
 																			}
 																			
 																				$main_content .= '
-																					<div class="ServiceID_Icon_Selected" id="ServiceID_Icon_Selected_'.$product['id'].'" ></div>
-																					<div class="ServiceID_Icon_Over" id="ServiceID_Icon_Over_'.$product['id'].'" ></div>';
+																					<div 
+class="ServiceID_Icon_Selected" id="ServiceID_Icon_Selected_'.$product['id'].'" ></div>
+																					<div 
+class="ServiceID_Icon_Over" id="ServiceID_Icon_Over_'.$product['id'].'" ></div>';
 																				$main_content .= '
-																					<div class="ServiceID_Icon_Animation_1" id="ServiceID_Icon_Animation_1_'.$product['id'].'" style="background-image: url('.$layout_name.'/images/shop/items/serviceid_'.$product['id'].'_animation_1.gif);" ></div>';
+																					<div 
+class="ServiceID_Icon_Animation_1" id="ServiceID_Icon_Animation_1_'.$product['id'].'" style="background-image: 
+url('.$layout_name.'/images/shop/items/serviceid_'.$product['id'].'_animation_1.gif);" ></div>';
 																				$main_content .= '
-																					<label for="ServiceID_'.$product['id'].'" >
-																						<div class="ServiceIDLabelContainer" >
-																							<div class="ServiceIDLabel" >
+																					<label 
+for="ServiceID_'.$product['id'].'" >
+																						<div 
+class="ServiceIDLabelContainer" >
+																							<div 
+class="ServiceIDLabel" >
 																								<input type="radio" id="ServiceID_'.$product['id'].'" class="ServiceID" name="ServiceID" value="'.$product['id'].'" />
 																								'.$product['offer_name'].' </div>
 																						</div>
-																						<div class="ServiceIDPriceContainer" ><span class="ServiceIDPrice" id="PD_'.$product['id'].'" >'.$product['coins'].' Coins</span> *</div>
+																						<div 
+class="ServiceIDPriceContainer" ><span class="ServiceIDPrice" id="PD_'.$product['id'].'" >'.$product['coins'].' Coins</span> *</div>
 																					</label>
 																				</div>
 																			</div>
@@ -392,7 +448,8 @@ if(!defined('INITIALIZED'))
 																if($serviceCategoryId == 5)
 																	$itemName = "Items";
 																	
-																$main_content .= '<p>None <strong>'.$itemName.'</strong> has been added for sale yet .</p>';
+																$main_content .= '<p>None <strong>'.$itemName.'</strong> has 
+been added for sale yet .</p>';
 															}
 															$main_content .= '
 																</div>
@@ -402,9 +459,12 @@ if(!defined('INITIALIZED'))
 												</div>
 											</div>
 											<div class="TableShadowContainer" >
-												<div class="TableBottomShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
-													<div class="TableBottomLeftShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
-													<div class="TableBottomRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
+												<div class="TableBottomShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
+													<div class="TableBottomLeftShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
+													<div class="TableBottomRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
 												</div>
 											</div>
 										</td>
@@ -413,34 +473,52 @@ if(!defined('INITIALIZED'))
 									<tr>
 										<td>
 											<div class="TableShadowContainerRightTop" >
-												<div class="TableShadowRightTop" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
+												<div class="TableShadowRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
 											</div>
-											<div class="TableContentAndRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
+											<div class="TableContentAndRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
 												<div class="TableContentContainer" >
-													<table class="TableContent" width="100%"  style="border:1px solid #faf0d7;" >
+													<table class="TableContent" width="100%" style="border:1px solid #faf0d7;" >
 														<tr>
 															<td style="text-align: center;" align="center" >
 																<div style="max-height: 240px; overflow-y: auto;" >
-																	<div class="PMCID_Icon_Container" id="PMCID_Icon_Container_1" >
-																		<div class="PMCID_Icon" id="PMCID_Icon_1" style="background-image:url('.$layout_name.'/images/payment/pmcid_icon_normal.png);" onclick="ChangePMC(1);" onmouseover="MouseOverPMCID(1);" onmouseout="MouseOutPMCID(1);" >
-																			<div class="PermanentDeactivated PMCID_Deactivated_ByChoice" id="PMCID_NotAllowed_1" style="display: none;"" >
-																				<span class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'Payment Method Info:\', \'&lt;p&gt;The payment method is not allowed for the selected service!&lt;/p&gt;\', \'\');" onMouseOut="$(\'#HelperDivContainer\').hide();" >
-																					<div class="PMCID_Deactivated" style="background-image: url('.$layout_name.'/images/payment/pmcid_deactivated.png);" ></div>
+																	<div class="PMCID_Icon_Container" 
+id="PMCID_Icon_Container_1" >
+																		<div class="PMCID_Icon" id="PMCID_Icon_1" 
+style="background-image:url('.$layout_name.'/images/payment/pmcid_icon_normal.png);" onclick="ChangePMC(1);" onmouseover="MouseOverPMCID(1);" onmouseout="MouseOutPMCID(1);" >
+																			<div class="PermanentDeactivated 
+PMCID_Deactivated_ByChoice" id="PMCID_NotAllowed_1" style="display: none;"" >
+																				<span 
+class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'Payment Method Info:\', \'&lt;p&gt;The payment method is not allowed for the selected service!&lt;/p&gt;\', \'\');" 
+onMouseOut="$(\'#HelperDivContainer\').hide();" >
+																					<div 
+class="PMCID_Deactivated" style="background-image: url('.$layout_name.'/images/payment/pmcid_deactivated.png);" ></div>
 																				</span>
 																			</div>
-																			<div class="PMCID_Icon_Selected" id="PMCID_Icon_Selected_1" ></div>
-																			<div class="PMCID_Icon_Over" id="PMCID_Icon_Over_1" ></div>
-																			<span style="position: absolute; left: 125px; top: 53px; z-index: 99;" >
-																				<span style="margin-left: 5px; position: absolute; margin-top: 2px;" >																					
-																					<span class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'Information:\', \'Tibia Coins can be used to purchase addons, mounts, items and extra services.\', \'\');" onMouseOut="$(\'#HelperDivContainer\').hide();" >
-																						<image style="border:0px;" src="'.$layout_name.'/images/global/content/info.gif" />
+																			<div class="PMCID_Icon_Selected" 
+id="PMCID_Icon_Selected_1" ></div>
+																			<div class="PMCID_Icon_Over" 
+id="PMCID_Icon_Over_1" ></div>
+																			<span style="position: absolute; left: 
+125px; top: 53px; z-index: 99;" >
+																				<span style="margin-left: 5px; 
+position: absolute; margin-top: 2px;" >
+																					<span 
+class="HelperDivIndicator" onMouseOver="ActivateHelperDiv($(this), \'Information:\', \'Tibia Coins can be used to purchase addons, mounts, items and extra services.\', \'\');" 
+onMouseOut="$(\'#HelperDivContainer\').hide();" >
+																						<image 
+style="border:0px;" src="'.$layout_name.'/images/global/content/info.gif" />
 																					</span>
 																				</span>
 																			</span>
-																			<img class="PMCID_CP_Icon" src="'.$layout_name.'/images/payment/points.gif" />
+																			<img class="PMCID_CP_Icon" 
+src="'.$layout_name.'/images/payment/points.gif" />
 																			<div class="PMCID_CP_Label" >
-																				<input type="radio" id="PMCID_1" name="PMCID" value="1">
-																				<label for="PMCID_1" >Tibia Coins</label>
+																				<input type="radio" 
+id="PMCID_1" name="PMCID" value="1">
+																				<label for="PMCID_1" >Tibia 
+Coins</label>
 																			</div>
 																		</div>
 																	</div>
@@ -451,15 +529,18 @@ if(!defined('INITIALIZED'))
 												</div>
 											</div>
 											<div class="TableShadowContainer" >
-												<div class="TableBottomShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
-													<div class="TableBottomLeftShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
-													<div class="TableBottomRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
+												<div class="TableBottomShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
+													<div class="TableBottomLeftShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
+													<div class="TableBottomRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
 												</div>
 											</div>
 										</td>
 									</tr>';
 											
-							$main_content .= '									
+							$main_content .= '
 								</table>
 							</div>
 						</td>
@@ -473,8 +554,10 @@ if(!defined('INITIALIZED'))
 					<input type="hidden" name="ServiceCategoryID" value="'.$serviceCategoryId.'">
 					<input type="hidden" name="step" value="2">
 					<div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green.gif)" >
-						<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green_over.gif);" ></div>
-							<input id="sendService" class="ButtonText" type="image" name=s"Next" alt="Next" src="'.$layout_name.'/images/global/buttons/_sbutton_next.gif" >
+						<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green_over.gif);" ></div>
+							<input id="sendService" class="ButtonText" type="image" name=s"Next" alt="Next" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_next.gif" >
 						</div>
 					</div>
 				</div>
@@ -482,8 +565,10 @@ if(!defined('INITIALIZED'))
 				<div class="RightButton" >
 					<form action="?subtopic=accountmanagement&action=manage" method="post" style="padding:0px;margin:0px;" >
 						<div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_red.gif)" >
-							<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_red_over.gif);" ></div>
-								<input class="ButtonText" type="image" name="Cancel" alt="Cancel" src="'.$layout_name.'/images/global/buttons/_sbutton_cancel.gif" >
+							<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_red_over.gif);" ></div>
+								<input class="ButtonText" type="image" name="Cancel" alt="Cancel" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_cancel.gif" >
 							</div>
 						</div>
 					</form>
@@ -502,7 +587,7 @@ if(!defined('INITIALIZED'))
 			if(empty($services_errors)) {
 				$shop_offer = $SQL->query("SELECT * FROM `z_shop_offer` WHERE `id` = '$service_id'")->fetch();
 				$service_price = $shop_offer['price'];
-				$service_points = $shop_offer['points'];
+				$service_points = $shop_offer['coins'];
 				$service_name = $shop_offer['offer_name'];
 				if($account_logged->getCoins() < $service_points)
 					$services_errors[] = "You need at least ".$service_points." tibia coins to purchase the ".$service_name.".";
@@ -517,16 +602,24 @@ if(!defined('INITIALIZED'))
 					<div class="TableContainer" >
 						<table class="Table5" cellpadding="0" cellspacing="0">
 						<div class="CaptionContainer" >
-							<div class="CaptionInnerContainer" > 
-								<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-								<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-								<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-								<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+							<div class="CaptionInnerContainer" >
+								<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" 
+/></span>
+								<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" 
+/></span>
+								<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" 
+></span>
+								<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" 
+/></span>
 								<div class="Text" >'.$service.'</div>
-								<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span> 
-								<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-								<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-								<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
+								<span class="CaptionVerticalRight" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+								<span class="CaptionBorderBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+								<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" 
+/></span>
+								<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" 
+/></span>
 							</div>
 						</div>
 						<tr>
@@ -536,33 +629,42 @@ if(!defined('INITIALIZED'))
 										<tr>
 											<td>
 												<div class="TableShadowContainerRightTop" >
-													<div class="TableShadowRightTop" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
+													<div class="TableShadowRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
 												</div>
-												<div class="TableContentAndRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
+												<div class="TableContentAndRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
 													<div class="TableContentContainer" >
-														<table class="TableContent" width="100%"  style="border:1px solid #faf0d7;" >
-															<tr><td class="LabelV">Send to my account <input type="radio" name="sendTo" value="me" checked></td></tr>
+														<table class="TableContent" width="100%" style="border:1px solid #faf0d7;" >
+															<tr><td class="LabelV">Send to my account <input type="radio" 
+name="sendTo" value="me" checked></td></tr>
 															<tr>
-																<td class="LabelV">Send to my friend <input type="radio" name="sendTo" value="friend" onBlur="showSelect()">
+																<td class="LabelV">Send to my friend <input type="radio" 
+name="sendTo" value="friend" onBlur="showSelect()">
 																	<select name="selectFriend">
 																		<option value="">Select a Friend</option>';
-																$get_friends = $SQL->query("SELECT * FROM `account_viplist` WHERE `account_id` = '".$account_logged->getID()."'")->fetchAll();
+																$get_friends = $SQL->query("SELECT * FROM `account_viplist` 
+WHERE `account_id` = '".$account_logged->getID()."'")->fetchAll();
 																foreach($get_friends as $fID) {
 																	$friend = new Player();
 																	$friend->loadById($fID['player_id']);
-																	$main_content .= '<option value="'.$friend->getName().'">'.$friend->getName().'</option>';
+																	$main_content .= '<option 
+value="'.$friend->getName().'">'.$friend->getName().'</option>';
 																}
 																$main_content .= '
 																	</select>
 																</td>
-															</tr>														
+															</tr>
 														</table>
 													</div>
-												</div>											
+												</div>
 												<div class="TableShadowContainer" >
-													<div class="TableBottomShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
-														<div class="TableBottomLeftShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
-														<div class="TableBottomRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
+													<div class="TableBottomShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
+														<div class="TableBottomLeftShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
+														<div class="TableBottomRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
 													</div>
 												</div>
 											</td>
@@ -583,7 +685,8 @@ if(!defined('INITIALIZED'))
 						<input type="hidden" name="ServiceID" value="'.$service_id.'">
 						<input type="hidden" name="step" value="3">
 						<div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green.gif)" >
-							<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green_over.gif);" ></div>
+							<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green_over.gif);" ></div>
 								<input class="ButtonText" type="image" name="Next" alt="Next" src="'.$layout_name.'/images/global/buttons/_sbutton_next.gif" >
 							</div>
 						</div>
@@ -594,8 +697,10 @@ if(!defined('INITIALIZED'))
 							<input type="hidden" name="ServiceCategoryID" value="'.$serviceCategoryID.'" />
 							<input type="hidden" name="step" value="1">
 							<div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
-								<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
-									<input class="ButtonText" type="image" name="Previous" alt="Previous" src="'.$layout_name.'/images/global/buttons/_sbutton_previous.gif" >
+								<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
+									<input class="ButtonText" type="image" name="Previous" alt="Previous" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_previous.gif" >
 								</div>
 							</div>
 						</form>
@@ -607,16 +712,24 @@ if(!defined('INITIALIZED'))
 						<div class="TableContainer" >
 							<table class="Table1" cellpadding="0" cellspacing="0" >
 								<div class="CaptionContainer" >
-									<div class="CaptionInnerContainer" > 
-										<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-										<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-										<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-										<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>							
+									<div class="CaptionInnerContainer" >
+										<span class="CaptionEdgeLeftTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionEdgeRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionBorderTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+										<span class="CaptionVerticalLeft" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
 										<div class="Text" >Services Page Errors</div>
-										<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
-										<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-										<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-										<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionVerticalRight" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+										<span class="CaptionBorderBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+										<span class="CaptionEdgeLeftBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionEdgeRightBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
 									</div>
 								</div>
 								<tr>
@@ -644,9 +757,12 @@ if(!defined('INITIALIZED'))
 											<input type="hidden" name="ServiceCategoryID" value="'.$serviceCategoryID.'" />
 											<input type="hidden" name="step" value="1">
 											<tr>
-												<td style="border:0px;" ><div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
-														<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
-															<input class="ButtonText" type="image" name="Back" alt="Back" src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
+												<td style="border:0px;" ><div class="BigButton" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
+														<div onMouseOver="MouseOverBigButton(this);" 
+onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
+															<input class="ButtonText" type="image" name="Back" alt="Back" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
 														</div>
 													</div>
 												</td>
@@ -676,16 +792,24 @@ if(!defined('INITIALIZED'))
 						<div class="TableContainer" >
 							<table class="Table5" cellpadding="0" cellspacing="0">
 								<div class="CaptionContainer" >
-									<div class="CaptionInnerContainer" > 
-										<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-										<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-										<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-										<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+									<div class="CaptionInnerContainer" >
+										<span class="CaptionEdgeLeftTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionEdgeRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionBorderTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+										<span class="CaptionVerticalLeft" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
 										<div class="Text" >'.$service.'</div>
-										<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span> 
-										<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-										<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-										<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
+										<span class="CaptionVerticalRight" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+										<span class="CaptionBorderBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+										<span class="CaptionEdgeLeftBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionEdgeRightBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
 									</div>
 								</div>
 								<tr>
@@ -695,11 +819,14 @@ if(!defined('INITIALIZED'))
 												<tr>
 													<td>
 														<div class="TableShadowContainerRightTop" >
-															<div class="TableShadowRightTop" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
+															<div class="TableShadowRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
 														</div>
-														<div class="TableContentAndRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
+														<div class="TableContentAndRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
 															<div class="TableContentContainer" >
-																<table class="TableContent" width="100%"  style="border:1px solid #faf0d7;" >
+																<table class="TableContent" width="100%" style="border:1px 
+solid #faf0d7;" >
 																	<tr>
 																		<td class="LabelV200" >Service</td>
 																		<td>' . $service_info['offer_name'] . '</td>
@@ -707,16 +834,20 @@ if(!defined('INITIALIZED'))
 																	$main_content .= '
 																	<tr>
 																		<td class="LabelV200" >Tibia Coins</td>
-																		<td>' . $service_info['coins'] . ' Tibia Coins</td>
+																		<td>' . $service_info['coins'] . ' Tibia 
+Coins</td>
 																	</tr>';
 															$main_content .= '
 																</table>
 															</div>
 														</div>
 														<div class="TableShadowContainer" >
-															<div class="TableBottomShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
-																<div class="TableBottomLeftShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
-																<div class="TableBottomRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
+															<div class="TableBottomShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
+																<div class="TableBottomLeftShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
+																<div class="TableBottomRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
 															</div>
 														</div>
 													</td>
@@ -724,11 +855,14 @@ if(!defined('INITIALIZED'))
 												<tr>
 													<td>
 														<div class="TableShadowContainerRightTop" >
-															<div class="TableShadowRightTop" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
+															<div class="TableShadowRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
 														</div>
-														<div class="TableContentAndRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
+														<div class="TableContentAndRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
 															<div class="TableContentContainer" >
-																<table class="TableContent" width="100%"  style="border:1px solid #faf0d7;" >
+																<table class="TableContent" width="100%" style="border:1px 
+solid #faf0d7;" >
 																	<tr>
 																		<td class="LabelV200" >Payment Method</td>
 																		<td>Tibia Coins</td>
@@ -744,9 +878,12 @@ if(!defined('INITIALIZED'))
 															</div>
 														</div>
 														<div class="TableShadowContainer" >
-															<div class="TableBottomShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
-																<div class="TableBottomLeftShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
-																<div class="TableBottomRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
+															<div class="TableBottomShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
+																<div class="TableBottomLeftShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
+																<div class="TableBottomRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
 															</div>
 														</div>
 													</td>
@@ -754,18 +891,24 @@ if(!defined('INITIALIZED'))
 												<tr>
 													<td>
 														<div class="TableShadowContainerRightTop" >
-															<div class="TableShadowRightTop" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
+															<div class="TableShadowRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
 														</div>
-														<div class="TableContentAndRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
+														<div class="TableContentAndRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
 															<div class="TableContentContainer" >
-																<table class="TableContent" width="100%"  style="border:1px solid #faf0d7;" >
-																	<form method="post" action="?subtopic=accountmanagement&action=services" >
+																<table class="TableContent" width="100%" style="border:1px 
+solid #faf0d7;" >
+																	<form method="post" 
+action="?subtopic=accountmanagement&action=services" >
 																	
 																	<tr>
 																		<td colspan="2" >
-																			<input type="checkbox" name="RulesAccept" value="1" id="AgreementsCheckbox" />
+																			<input type="checkbox" 
+name="RulesAccept" value="1" id="AgreementsCheckbox" />
 																			<span>
-																			<Label for="AgreementsCheckbox" >I have read and I agree to the <a href="#" target="_blank" >' . $config['server']['serverName'] . ' Rules</a>.</label>
+																			<Label for="AgreementsCheckbox" >I 
+have read and I agree to the <a href="#" target="_blank" >' . $config['server']['serverName'] . ' Rules</a>.</label>
 																			</span>
 																		</td>
 																	</tr>
@@ -773,9 +916,12 @@ if(!defined('INITIALIZED'))
 															</div>
 														</div>
 														<div class="TableShadowContainer" >
-															<div class="TableBottomShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
-																<div class="TableBottomLeftShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
-																<div class="TableBottomRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
+															<div class="TableBottomShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
+																<div class="TableBottomLeftShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
+																<div class="TableBottomRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
 															</div>
 														</div>
 													</td>
@@ -792,13 +938,15 @@ if(!defined('INITIALIZED'))
 								<input type="hidden" name="ServiceID" value="' . $service_id . '" >
 								<input type="hidden" name="PMCID" value="' . $payment_method . '" >
 								<input type="hidden" name="ServiceCategoryID" value="' . $serviceCategoryID . '" >
-								<input type="hidden" name="Points" value="' . $service_info['points'] . '" />
+								<input type="hidden" name="Points" value="' . $service_info['coins'] . '" />
 								<input type="hidden" name="selectFriend" value="'.$friend_name.'">
 								<input type="hidden" name="sendTo" value="'.$sendTo.'">
 								<input type="hidden" name="step" value="4" >
 								<div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green.gif)" >
-									<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green_over.gif);" ></div>
-										<input class="ButtonText" type="image" name="BuyNow" alt="BuyNow" src="'.$layout_name.'/images/global/buttons/_sbutton_buynow.gif" >
+									<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_green_over.gif);" ></div>
+										<input class="ButtonText" type="image" name="BuyNow" alt="BuyNow" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_buynow.gif" >
 									</div>
 								</div>
 							</div>
@@ -810,8 +958,10 @@ if(!defined('INITIALIZED'))
 									<input type="hidden" name="PMCID" value="' . $payment_method . '" >
 									<input type="hidden" name="step" value="2" >
 									<div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
-										<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
-											<input class="ButtonText" type="image" name="Previous" alt="Previous" src="'.$layout_name.'/images/global/buttons/_sbutton_previous.gif" >
+										<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
+											<input class="ButtonText" type="image" name="Previous" alt="Previous" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_previous.gif" >
 										</div>
 									</div>
 								</form>
@@ -822,16 +972,24 @@ if(!defined('INITIALIZED'))
 						<div class="TableContainer" >
 							<table class="Table1" cellpadding="0" cellspacing="0" >
 								<div class="CaptionContainer" >
-									<div class="CaptionInnerContainer" > 
-										<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-										<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-										<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-										<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>							
+									<div class="CaptionInnerContainer" >
+										<span class="CaptionEdgeLeftTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionEdgeRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionBorderTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+										<span class="CaptionVerticalLeft" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
 										<div class="Text" >Services Page Errors</div>
-										<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
-										<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-										<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-										<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionVerticalRight" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+										<span class="CaptionBorderBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+										<span class="CaptionEdgeLeftBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+										<span class="CaptionEdgeRightBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
 									</div>
 								</div>
 								<tr>
@@ -863,9 +1021,12 @@ if(!defined('INITIALIZED'))
 											<input type="hidden" name="sendTo" value="'.$sendTo.'">
 											<input type="hidden" name="step" value="2">
 											<tr>
-												<td style="border:0px;" ><div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
-														<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
-															<input class="ButtonText" type="image" name="Back" alt="Back" src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
+												<td style="border:0px;" ><div class="BigButton" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
+														<div onMouseOver="MouseOverBigButton(this);" 
+onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
+															<input class="ButtonText" type="image" name="Back" alt="Back" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
 														</div>
 													</div>
 												</td>
@@ -883,7 +1044,6 @@ if(!defined('INITIALIZED'))
 			$serviceCategoryID = (int) $_REQUEST['ServiceCategoryID'];
 			$payment_method = (int) $_REQUEST['PMCID'];
 			$service_id = (int) $_REQUEST['ServiceID'];
-
 			$service_info = $SQL->query("SELECT * FROM `z_shop_offer` WHERE `id` = '$service_id'")->fetch();
 			
 			$sendTo = $_REQUEST['sendTo'];
@@ -893,8 +1053,7 @@ if(!defined('INITIALIZED'))
 			$friendInfo->find($sendFriend);
 			if($sendTo == "friend" && !$friendInfo->isLoaded())
 				$services_errors[] = "The friend to whom you want to send the gift does not exist.";
-
-			$service_points = $service_info['points'];
+			$service_points = $service_info['coins'];
 			$debitPoints = $account_logged->getCoins() - $service_points;
 					
 			$rules_accept = (int) $_REQUEST['RulesAccept'];
@@ -909,19 +1068,25 @@ if(!defined('INITIALIZED'))
 			if($rules_accept == 0)
 				$services_errors[] = "You have to accept the ".$config['server']['serverName']." Rules.";
 				
-			if(empty($services_errors)) {				
+			if(empty($services_errors)) {
 				if( $_SERVER['REQUEST_METHOD']=='POST' ) {
-					$hash = md5( implode( $_POST ) );			
-					if( isset( $_SESSION['hash'] ) && $_SESSION['hash'] == $hash ) {		
-						// Refresh! NÃƒÂ£o faz nada ou re-exibe o formulÃƒÂ¡rio preenchido			
-					} else {			
-						$_SESSION['hash']  = $request;
+					$hash = md5( implode( $_POST ) );
+					if( isset( $_SESSION['hash'] ) && $_SESSION['hash'] == $hash ) {
+						// Refresh! NÃƒÂ£o faz nada ou re-exibe o formulÃƒÂ¡rio preenchido
+					} else {
+						$_SESSION['hash'] = $request;
 						
 						if($sendTo == "friend") {
-							$add_order = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES ('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','gift','$orderDate','0')");
-							$add_friend = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES ('$friend_acc','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','ready','$orderDate','1')");
+							$add_order = $SQL->query("INSERT INTO `z_shop_payment` 
+(`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES 
+('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','gift','$orderDate','0')");
+							$add_friend = $SQL->query("INSERT INTO `z_shop_payment` 
+(`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES 
+('$friend_acc','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','ready','$orderDate','1')");
 						} else {
-							$add_order = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES ('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','ready','$orderDate','0')");
+							$add_order = $SQL->query("INSERT INTO `z_shop_payment` 
+(`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES 
+('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','ready','$orderDate','0')");
 						}							
 						$account_logged->setCoins($debitPoints);
 						$account_logged->save();
@@ -934,16 +1099,24 @@ if(!defined('INITIALIZED'))
 							<div class="TableContainer" >
 								<table class="Table5" cellpadding="0" cellspacing="0">
 									<div class="CaptionContainer" >
-										<div class="CaptionInnerContainer" > 
-											<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-											<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-											<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-											<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+										<div class="CaptionInnerContainer" >
+											<span class="CaptionEdgeLeftTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+											<span class="CaptionEdgeRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+											<span class="CaptionBorderTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+											<span class="CaptionVerticalLeft" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
 											<div class="Text" >'.$service.'</div>
-											<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span> 
-											<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-											<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
-											<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span> 
+											<span class="CaptionVerticalRight" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+											<span class="CaptionBorderBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+											<span class="CaptionEdgeLeftBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+											<span class="CaptionEdgeRightBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
 										</div>
 									</div>
 									<tr>
@@ -953,19 +1126,24 @@ if(!defined('INITIALIZED'))
 													<tr>
 														<td>
 															<div class="TableShadowContainerRightTop" >
-																<div class="TableShadowRightTop" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
+																<div class="TableShadowRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rt.gif);" ></div>
 															</div>
-															<div class="TableContentAndRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
+															<div class="TableContentAndRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-rm.gif);" >
 																<div class="TableContentContainer" >
-																	<table class="TableContent" width="100%"  style="border:1px solid #faf0d7;" >
+																	<table class="TableContent" width="100%" 
+style="border:1px solid #faf0d7;" >
 																		<tr>';
-																	if($sendTo == "friend") 
+																	if($sendTo == "friend")
 																		$main_content .= '
-																			<td>Thank you for your order. The '.$service_info['offer_name'].' been sent to your friend successfully.</td>';
-																	else 
+																			<td>Thank you for your order. The 
+'.$service_info['offer_name'].' been sent to your friend successfully.</td>';
+																	else
 																	
 																		$main_content .= '
-																			<td>Thank you for your order. The '.$service_info['offer_name'].' is available for you to choose the character which will activate . Simply access your available products and activate.</td>';
+																			<td>Thank you for your order. The 
+'.$service_info['offer_name'].' is available for you to choose the character which will activate . Simply access your available products and activate.</td>';
 																	
 																	$main_content .= '
 																		</tr>
@@ -973,9 +1151,12 @@ if(!defined('INITIALIZED'))
 																</div>
 															</div>
 															<div class="TableShadowContainer" >
-																<div class="TableBottomShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
-																	<div class="TableBottomLeftShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
-																	<div class="TableBottomRightShadow" style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
+																<div class="TableBottomShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bm.gif);" >
+																	<div class="TableBottomLeftShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-bl.gif);" ></div>
+																	<div class="TableBottomRightShadow" 
+style="background-image:url('.$layout_name.'/images/global/content/table-shadow-br.gif);" ></div>
 																</div>
 															</div>
 														</td>
@@ -990,9 +1171,12 @@ if(!defined('INITIALIZED'))
 								<tr align="center">
 									<td>
 										<form action="?subtopic=accountmanagement&action=manage" method="post" style="padding:0px;margin:0px;" >
-											<div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
-												<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
-													<input class="ButtonText" type="image" name="Back" alt="Back" src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
+											<div class="BigButton" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
+												<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div 
+class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
+													<input class="ButtonText" type="image" name="Back" alt="Back" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
 												</div>
 											</div>
 										</form>
@@ -1005,16 +1189,24 @@ if(!defined('INITIALIZED'))
 							<div class="TableContainer" >
 								<table class="Table1" cellpadding="0" cellspacing="0" >
 									<div class="CaptionContainer" >
-										<div class="CaptionInnerContainer" > 
-											<span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-											<span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-											<span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-											<span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>							
+										<div class="CaptionInnerContainer" >
+											<span class="CaptionEdgeLeftTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+											<span class="CaptionEdgeRightTop" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+											<span class="CaptionBorderTop" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+											<span class="CaptionVerticalLeft" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
 											<div class="Text" >Services Page Errors</div>
-											<span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
-											<span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span> 
-											<span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
-											<span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+											<span class="CaptionVerticalRight" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-vertical.gif);" /></span>
+											<span class="CaptionBorderBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/table-headline-border.gif);" ></span>
+											<span class="CaptionEdgeLeftBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
+											<span class="CaptionEdgeRightBottom" 
+style="background-image:url('.$layout_name.'/images/global/content/box-frame-edge.gif);" /></span>
 										</div>
 									</div>
 									<tr>
@@ -1041,15 +1233,19 @@ if(!defined('INITIALIZED'))
 											<form action="?subtopic=accountmanagement&action=services" method="post">
 												<input type="hidden" name="ServiceID" value="' . $_REQUEST['ServiceID'] . '" />
 												<input type="hidden" name="PMCID" value="' . $_REQUEST['PMCID'] . '" />
-												<input type="hidden" name="ServiceCategoryID" value="' . $_REQUEST['ServiceCategoryID'] . '" />
+												<input type="hidden" name="ServiceCategoryID" value="' . $_REQUEST['ServiceCategoryID'] . '" 
+/>
 												<input type="hidden" name="Price" value="' . $_REQUEST['Price'] . '" />
 												<input type="hidden" name="selectFriend" value="'.$sendFriend.'">
 												<input type="hidden" name="sendTo" value="'.$sendTo.'">
 												<input type="hidden" name="step" value="3">
 												<tr>
-													<td style="border:0px;" ><div class="BigButton" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
-															<div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
-																<input class="ButtonText" type="image" name="Back" alt="Back" src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
+													<td style="border:0px;" ><div class="BigButton" 
+style="background-image:url('.$layout_name.'/images/global/buttons/sbutton.gif)" >
+															<div onMouseOver="MouseOverBigButton(this);" 
+onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/global/buttons/sbutton_over.gif);" ></div>
+																<input class="ButtonText" type="image" name="Back" alt="Back" 
+src="'.$layout_name.'/images/global/buttons/_sbutton_back.gif" >
 															</div>
 														</div>
 													</td>
