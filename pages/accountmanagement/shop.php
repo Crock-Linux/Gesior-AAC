@@ -345,19 +345,19 @@ if(!defined('INITIALIZED'))
 																							<div class="ServiceID_HelperDiv" style="z-index: 999;" ></div>
 																						</span>
 																					</div>';
-																			if ($product['category'] == 4) {
+																			if ($product['category'] == 3) {
 																				$main_content .= '
 																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/outfits/'.strtolower(str_replace(" ","_",$product['addon_name'])).'_male.gif); background-repeat:no-repeat; margin:5px 0;" ></div>
 																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/outfits/'.strtolower(str_replace(" ","_",$product['addon_name'])).'_female.gif); background-repeat:no-repeat; margin:5px 60px;" ></div>';
 																			}
-																			if ($product['category'] == 5)
+																			if ($product['category'] == 4)
 																				$main_content .= '
 																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/items/'.$product['itemid'].'.gif); background-repeat:no-repeat; margin:20px 45px;" ></div>';
-																			if ($product['category'] == 3) {
+																			if ($product['category'] == 2) {
 																				$main_content .= '
 																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/mounts/'.str_replace(" ","_",$product['offer_name']).'.gif); background-repeat:no-repeat; margin:-5px 22px;" ></div>';
 																			}
-																			if ($product['category'] == 6) {
+																			if ($product['category'] == 5) {
 																				$main_content .= '
 																					<div class="ServiceID_Icon_New" id="ServiceID_Icon_New_'.$product['id'].'" style="background-image:url('.$layout_name.'/images/shop/points.gif); background-repeat:no-repeat; margin:20px 45px;" ></div>';
 																			}
@@ -381,12 +381,14 @@ if(!defined('INITIALIZED'))
 																		</div>';
 																}
 															else {
-																if($serviceCategoryId == 2)
+																if($serviceCategoryId == 1)
 																	$itemName = "Extra Services";
-																if($serviceCategoryId == 3)
+																if($serviceCategoryId == 2)
 																	$itemName = "Mounts";
-																if($serviceCategoryId == 4)
+																if($serviceCategoryId == 3)
 																	$itemName = "Outfits";
+																if($serviceCategoryId == 4)
+																	$itemName = "Items";
 																if($serviceCategoryId == 5)
 																	$itemName = "Items";
 																	
@@ -921,7 +923,7 @@ if(!defined('INITIALIZED'))
 						} else {
 							$add_order = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`status`,`date`,`gift`) VALUES ('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','ready','$orderDate','0')");
 						}							
-						$account_logged->getCoins($debitPoints);
+						$account_logged->setCoins($debitPoints);
 						$account_logged->save();
 					}
 				}
