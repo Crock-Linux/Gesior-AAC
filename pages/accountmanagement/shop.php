@@ -707,7 +707,7 @@ if(!defined('INITIALIZED'))
 																	$main_content .= '
 																	<tr>
 																		<td class="LabelV200" >Tibia Coins</td>
-																		<td>' . $service_info['points'] . ' Tibia Coins</td>
+																		<td>' . $service_info['coins'] . ' Tibia Coins</td>
 																	</tr>';
 															$main_content .= '
 																</table>
