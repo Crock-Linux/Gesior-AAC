@@ -43,7 +43,7 @@ if(!defined('INITIALIZED'))
 		$g_Prices = '{';
 		foreach($get_Services as $g_Ser) {
 			$g_Prices .= '"'.$g_Ser['id'].'":{';
-			$g_Prices .= '"1":"'.$g_Ser['points'].'"';
+			$g_Prices .= '"1":"'.$g_Ser['coins'].'"';
 			$g_Prices .= '},';
 		}
 		$g_Prices = substr($g_Prices,0,-1);
@@ -112,7 +112,7 @@ if(!defined('INITIALIZED'))
 							} else {
 								// activate the service
 								// set the price
-								$(\'#PD_\' + g_Services[i]).html(g_Prices[g_Services[i]][a_PaymentMethodID]);
+								$(\'#PD_\' + g_Services[i]).html(g_Prices[g_Services[i]][a_PaymentMethodID] + \' Coins\');
 								$(\'#ServiceID_NotAllowed_\' + g_Services[i]).hide();
 							}
 						}
@@ -918,10 +918,10 @@ if(!defined('INITIALIZED'))
 						$_SESSION['hash']  = $request;
 						
 						if($sendTo == "friend") {
-							$add_order = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`status`,`date`,`gift`) VALUES ('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','gift','$orderDate','0')");
-							$add_friend = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`status`,`date`,`gift`) VALUES ('$friend_acc','$service_id','$serviceCategoryID','$payment_method','$service_points','ready','$orderDate','1')");
+							$add_order = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES ('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','gift','$orderDate','0')");
+							$add_friend = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES ('$friend_acc','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','ready','$orderDate','1')");
 						} else {
-							$add_order = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`status`,`date`,`gift`) VALUES ('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','ready','$orderDate','0')");
+							$add_order = $SQL->query("INSERT INTO `z_shop_payment` (`account_name`,`service_id`,`service_category_id`,`payment_method_id`,`points`,`coins`,`status`,`date`,`gift`) VALUES ('$account_name','$service_id','$serviceCategoryID','$payment_method','$service_points','$service_points','ready','$orderDate','0')");
 						}							
 						$account_logged->setCoins($debitPoints);
 						$account_logged->save();
